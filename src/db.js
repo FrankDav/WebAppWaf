@@ -14,4 +14,13 @@ const config = {
   }
 };
 
-export const pool = new sql.ConnectionPool(config).connect();
+export const poolPromise = new sql.ConnectionPool(config)
+  .connect()
+  .then(pool => {
+    console.log("✅ Connected to Azure SQL Server");
+    return pool;
+  })
+  .catch(err => {
+    console.error("❌ SQL Connection Error:", err);
+    throw err;
+  });

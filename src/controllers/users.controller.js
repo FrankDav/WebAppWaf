@@ -1,4 +1,4 @@
-import { pool } from "../db.js";
+import { poolPromise } from "../db.js";
 import sql from "mssql";
 import { validationResult } from "express-validator";
 
@@ -12,7 +12,7 @@ export const registerUser = async (req, res) => {
   const { name, email } = req.body;
 
   try {
-    const conn = await pool;
+const conn = await poolPromise;
     await conn.request()
       .input("name", sql.VarChar, name)
       .input("email", sql.VarChar, email)
