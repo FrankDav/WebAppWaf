@@ -28,7 +28,9 @@ app.listen(PORT, () => {
 import express from "express";
 import helmet from "helmet";
 import usersRoutes from "./routes/users.routes.js";
+import dotenv from "dotenv";
 
+dotenv.config();
 const app = express();
 
 app.use(helmet());

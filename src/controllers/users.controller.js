@@ -27,7 +27,7 @@ const conn = await poolPromise;
 
 export const getUsers = async (req, res) => {
   try {
-    const conn = await pool;
+    const conn = await poolPromise;
     const result = await conn.request()
       .query("SELECT name, email FROM users");
 
