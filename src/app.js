@@ -35,11 +35,11 @@ app.use(helmet());
 app.use(express.urlencoded({ extended: false }));
 
 // Archivos estáticos
-app.use(express.static("src/views"));
+app.use(express.static("/views"));
 
 // Ruta raíz (IMPORTANTE)
 app.get("/", (req, res) => {
-  res.sendFile(process.cwd() + "/src/views/register.html");
+  res.sendFile(process.cwd() + "/views/register.html");
 });
 
 app.use(usersRoutes);
