@@ -1,0 +1,22 @@
+{
+  "name": "grupo01",
+  "version": "1.0.0",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "echo \"No tests defined\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1",
+    "express-validator": "^7.3.1",
+    "helmet": "^8.1.0",
+    "mssql": "^12.2.0"
+  }
+}
