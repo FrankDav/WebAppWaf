@@ -3,7 +3,7 @@ import sql from "mssql";
 import { validationResult } from "express-validator";
 
 export const registerUser = async (req, res) => {
-  // 🔐 Validación fail-secure
+
   const errors = validationResult(req);
   if (!errors.isEmpty()) {
     return res.status(400).send("Datos inválidos");
@@ -31,7 +31,7 @@ export const getUsers = async (req, res) => {
     const result = await conn.request()
       .query("SELECT name, email FROM users");
 
-    // HTML simple (sin EJS)
+
     let html = `
       <h2>Usuarios registrados</h2>
       <ul>
